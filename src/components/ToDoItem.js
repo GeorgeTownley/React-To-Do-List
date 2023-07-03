@@ -28,7 +28,7 @@ function ToDoItem({ todos, setTodos, removeTodo }) {
       <div key={index} className="todo-item">
         <div key={todo.id} onClick={() => handleCompleteTodo(todo.id)} />
         <span>{todo.text}</span>
-        <div className="buttons">
+        <div className="button">
           <button onClick={() => removeTodo(todo.id)}>delete</button>
           <button onClick={() => setEdit({ id: todo.id, value: todo.text })}>
             edit
