@@ -25,15 +25,15 @@ function ToDoItem({ todos, setTodos, removeTodo }) {
 
   return todos.map((todo, index) => (
     <>
-      <div key={index}>
+      <div key={index} className="todo-item">
         <div key={todo.id} onClick={() => handleCompleteTodo(todo.id)} />
-        {todo.text}
-      </div>
-      <div>
-        <button onClick={() => removeTodo(todo.id)}>delete</button>
-        <button onClick={() => setEdit({ id: todo.id, value: todo.text })}>
-          edit
-        </button>
+        <span>{todo.text}</span>
+        <div className="buttons">
+          <button onClick={() => removeTodo(todo.id)}>delete</button>
+          <button onClick={() => setEdit({ id: todo.id, value: todo.text })}>
+            edit
+          </button>
+        </div>
       </div>
     </>
   ));
